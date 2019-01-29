@@ -1,0 +1,48 @@
+{% extends "structure.html" %}
+{% block main %}
+            
+          <h2 style= "margin:20px 0px"><strong>Twitter Dapp<br/></h2><br/>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-left: 0px">
+              
+              
+            </div>
+
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <h4>{{message}}</h4>
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <form action="/login" method="post" class="form-signin">
+              <div class="form-group">
+                <label for="exampleInputEmail1">User ID</label>
+                <input type="username" name="username" class="form-control" id="exampleInputUserID" aria-describedby="userHelp" placeholder="Enter User ID">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" name="password" class="form-control" name="password" id="password" placeholder="Password">
+              </div>
+              <div class="form-check">
+                <button type="submit" class="btn btn-primary">Login</button>
+                <button class="btn btn-info" type="button" name="showpassword" id="showpassword" value="Show Password">Show password</button> 
+               
+              </div>
+              
+            </form>
+            <br>
+            <a href="/create_account"><button type="button" class="btn btn-primary">Register</button></a>
+            <!-- <br>
+            <br>
+            <a href="/logout"><button type="button" class="btn btn-info btn btn-default btn-sm">
+              <span class="glyphicon glyphicon-log-out"></span>Logout
+            </button></a> -->
+            <br>
+            <br>
+            <a href="/"><button type="button" class="btn btn-info btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-home"></span> Back to Dashboard
+            </button></a>
+            <br>
+            
+
+{% endblock main %}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Dapp Twitter</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<style>
+
+h2 {
+    margin: 20px 12px
+}
+
+h4 {
+    margin: 0px 3px 30px
+}
+
+body{
+	font: 12px Arial,Tahoma,Helvetica,FreeSans,sans-serif;
+	text-transform: inherit;
+	color: #333;
+	background: #e7edee;
+	width: 100%;
+}
+.wrap{
+	width: 720px;
+	margin: 15px auto;
+	padding: 15px 10px;
+	background: white;
+	border: 2px solid #DBDBDB;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.title, .userName {
+  font-weight:700;
+}
+
+.post {
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+}
+
+.post .title{
+  font-style:italic;
+}
+.post .body{
+  margin-top:5px;
+}
+
+
+.form-control {
+    width: 40%;
+}
+
+
+.wrap{
+	width: 720px;
+	margin: 15px;
+	padding: 15px 10px;
+	background: white;
+	border: 2px solid #DBDBDB;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.title, .userName {
+  font-weight:700;
+}
+
+.post {
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+}
+
+.post .title{
+  font-style:italic;
+}
+.post .body{
+  margin-top:5px;
+}
+
+
+
+</style>
+
+<body>
+<div class="container">	
+	<div class="row">
+      {% block main %}
+	  <h2><strong>Twitter Dapp<br/></h2><br/>
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-left: 0px">
+      
+      
+    </div>
+      {% endblock main %}
+		
+	
+		
+	</div>
+</div>
+
+
+<script>
+
+jQuery(document).ready(function(){
+
+
+// Show password Button
+$("#showpassword").on('click', function(){
+    
+    var pass = $("#password");
+    var fieldtype = pass.attr('type');
+    if (fieldtype == 'password') {
+        pass.attr('type', 'text');
+        $(this).text("Hide Password");
+    }else{
+        pass.attr('type', 'password');
+        $(this).text("Show Password");
+    }
+
+
+});
+
+});
+
+</script>
+
+</body>
+</html>

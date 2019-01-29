@@ -1,0 +1,189 @@
+{% extends "structure.html" %}
+
+{% block main %}
+<h2><strong>Twitter Dapp Homepage<br/></h2><br/>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-left: 0px">
+    
+    
+  </div>
+<div class="wrap"> 
+  <div>
+    <h1 class="title"> Actions </h1>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <h4>{{message}}</h4>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <div class="byUser">
+      <!--Beginning modal create form-->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Create New Post</button>
+      <a href="/"><button type="button" class="btn btn-info btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-home"></span> Back to Dashboard
+      </button></a>
+      
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">New Tweet</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="/message_board" method="post" class="form-signin">
+                <div class="form-group" >
+                  <label for="message-text" class="col-form-label">Message:</label>
+                  <textarea name= "content" type="content" id="content" class="form-control" style="width: 70%" id="message-text"></textarea>
+                </div>
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Create Post</button>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="float:right">
+          <a href="/logout"><button type="button" class="btn btn-info btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-log-out"></span>Logout
+          </button></a>
+      </div>
+
+<!-- End modal create form-->
+
+
+    </div>
+  </div>
+  
+  </div>
+  
+  <div class="wrap">
+    <div><h1 class="title">Posts</h1></div>
+    {% for x in content %}
+    <span class="scroll-title-if">
+    
+    <p class="post">
+      <div class="userName">
+          <h6><b>Posted by: {{x[2]}}</b></h6>
+          
+      </div>
+
+      
+      <div class="userName">
+          <h6><b>{{x[4]}}</b></h6>
+          
+      </div>
+
+      <div class="body">
+          <h6>{{x[3]}}</h6>
+      </div>
+    
+    <!-- cant use context processor to insert function  -->
+    
+    <br><br>
+    {% endfor %}
+
+    <!-- <p class="reply"> -->
+    </p>
+  </div>
+
+
+<script>
+
+  // var getData = [];
+  // var usersList = [];
+// <!-- 
+// function status(response) {
+//   //Check Promise
+//   if (response.status >= 200 && response.status < 300) {
+//     return Promise.resolve(response)
+//   } else {
+//     return Promise.reject(new Error(response.statusText))
+//   }
+// }
+
+// function json(response) {
+//   //Return JSON format
+//   return response.json()
+// }
+
+// function getUsers(){
+  
+//   fetch('https://jsonplaceholder.typicode.com/users')
+//   .then(status)
+//   .then(json)
+//   .then(function(dataList) {
+//     usersList = dataList;    
+//     dataList.forEach(function(data){
+//       $('#selUser').append($('<option>', { 
+//         value: data.id,
+//         text : data.name 
+//     }));
+      
+//     });
+//     getPosts("");
+    
+    
+//   })
+//   .catch(function(error) {
+//     console.log('Fetch User Error :-S', error);
+//   });
+  
+// }
+
+// function getPosts(option){
+  
+//   fetch('https://jsonplaceholder.typicode.com/posts' + option)
+//   .then(status)
+//   .then(json)
+//   .then(function(dataList) {
+//     getData = dataList;
+//     var divReply = $(".reply")
+//     divReply.empty();
+    
+//     dataList.forEach(function(data){
+//       var post = $('<p class="post"/>');
+      
+//       var divID = $('<div class="userName"/>').append($('<span>').append('By: ', usersList[data.userId - 1].name));    
+//       var divTitle = $('<div class="title"/>').append(data.title);
+//       var divBody = $('<div class="body"/>').append(data.body)
+      
+//       divReply.append(post.append(divID,divTitle,divBody));
+      
+//     });
+    
+//   })
+//   .catch(function(error) {
+//     console.log('Fetch Post Error :-S', error);
+//   });
+// } -->
+
+
+// $(document).ready(function() {
+//   //Get Post On Document Ready
+//   getUsers();
+// })
+
+// function searchUser(){
+//   var userSelected = $('#selUser').val();
+  
+//   if (userSelected != 0){
+//     getPosts("?userId=" + userSelected);
+//   }
+//   else{
+//     getPosts("");
+//   }
+// } 
+// </script>
+
+
+{% endblock main %}
+</body>
+</html>
+
+
