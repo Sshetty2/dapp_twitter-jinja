@@ -25,9 +25,9 @@ def run():
         );"""
     
     CUR.execute(SQL)
-    
+     
     SQL = "DROP TABLE IF EXISTS tweets;"
-    
+
     CUR.execute(SQL)
     
     SQL = """CREATE TABLE tweets(
@@ -42,6 +42,10 @@ def run():
     
     CUR.execute(SQL)
     
+    SQL = "DROP TABLE IF EXISTS users_followed;"
+
+    CUR.execute(SQL)
+
     SQL = """CREATE TABLE users_followed(
         pk INTEGER PRIMARY KEY AUTOINCREMENT,
         users_pk INTEGER,

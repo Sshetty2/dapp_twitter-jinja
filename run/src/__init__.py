@@ -155,7 +155,6 @@ def message_board():
         if 'username' in session:
             user_id = session['username']
             content = request.form['content']
-            print(content)
             try:
                 model.create_tweet(user_id,content)
             except:
